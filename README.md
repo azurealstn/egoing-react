@@ -1,71 +1,90 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # egoing-react
+
+## App Render
+
+### HTML 렌더링
+
+```javascript
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App /> //App을 렌더링해준다.
+  </React.StrictMode>
+);
+```
+
+### CSS 불러오기
+
+```javascript
+import './App.css';
+```
+
+### Component
+
+```javascript
+function Header() { //함수형 컴포넌트
+  return <header>
+    <h1><a href='/'>WEB</a></h1>
+  </header>
+}
+function Nav() { //함수형 컴포넌트
+  return <nav>
+    <ol>
+      <li><a href='/read/1'>html</a></li>
+      <li><a href='/read/2'>css</a></li>
+      <li><a href='/read/3'>js</a></li>
+    </ol>
+  </nav>
+}
+function Article() { //함수형 컴포넌트
+  return <article>
+    <h2>Welcome</h2>
+    Hello, WEB
+  </article>
+}
+function App() {
+  return (
+    <div>
+      <Header></Header> //헤더 컴포넌트 불러오기
+      <Nav></Nav> //네비게이션 컴포넌트 불러오기
+      <Article></Article> //아티클 컴포넌트 불러오기
+    </div>
+  );
+}
+```
+
+## Read
+
+### 💡Before
+
+![read1](https://user-images.githubusercontent.com/55525868/226170366-4a41c482-db3b-4730-a614-d7f4f0fd5674.png)
+
+### 🎇 After
+
+![read2](https://user-images.githubusercontent.com/55525868/226170370-79541119-e3a6-44b3-a29d-81976bbb0ade.png)
+
+## Create
+
+### 💡Before
+
+![create1](https://user-images.githubusercontent.com/55525868/226170374-f15384ff-03e8-4f02-8ea3-d8a7be6ef4eb.png)
+
+### 🎇 After
+
+![create2](https://user-images.githubusercontent.com/55525868/226170377-00c3cc70-79b4-490b-8db3-9b1bd0924800.png)
+
+## Update
+
+### 🎇 After
+
+![update1](https://user-images.githubusercontent.com/55525868/226170380-d830455e-51c3-4c9f-ae47-22a09d904f82.png)
+
+## Delete
+
+### 💡Before
+
+![delete1](https://user-images.githubusercontent.com/55525868/226170382-41829377-3fc8-401b-a66c-4e070ace1de4.png)
+
+### 🎇 After
+
+![delete2](https://user-images.githubusercontent.com/55525868/226170383-4515002a-fb83-4b8d-902d-a49247729269.png)
